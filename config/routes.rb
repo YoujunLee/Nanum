@@ -1,6 +1,6 @@
 Nanum::Application.routes.draw do
   root"board#posts"
-  get "board/posts_category"
+  get "/:category" => 'board#posts_category'
   get "board/show"
   get "board/write"
   get "board/write_complete"

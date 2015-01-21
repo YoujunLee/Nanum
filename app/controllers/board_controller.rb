@@ -4,7 +4,19 @@ class BoardController < ApplicationController
   end
 
   def posts_category
+		case params[:category]
+		when "used"
+			@category ="중고장터"
+		when "together"
+			@category ="공동구매"
+		when "give"
+			@category ="나눔"
+		when "help"
+			@category ="도와주세요"
   end
+
+	@posts = Post.where(category: @category)
+	end
 
   def show
   end

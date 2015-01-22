@@ -1,2 +1,19 @@
-<h1>Board#write</h1>
-<p>Find me in app/views/board/write.html.erb</p>
+<p><%= flash[:alert] %></p>
+<h2>게시글 작성</h2>
+
+<form action="/board/write_complete" method="post">
+  <p style="color: #ff0000">분류:
+  <select name="post_category">
+    <option value="중고장터">중고장터</option>
+    <option value="공동구매">공동구매</option>
+    <option value="나눔">나눔</option>
+    <option value="도와주세요">도와주세요</option>
+  </select></p>
+  <p>제목: <input type="text" name="post_title" placeholder="제목을 입력하세요."></p>
+
+	<p>가격: <input type="text" name="post_price" placeholder="원단위"></p>
+
+	<p>연락처: <input type="text" name="post_number" placeholder="Phone or KaKaO"></p>
+  <p>내용: <textarea name="post_content" placeholder="내용을 입력하세요."></textarea></p>
+  <input type="submit" value="추가하기">
+</form>

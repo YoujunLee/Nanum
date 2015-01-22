@@ -3,9 +3,9 @@ Nanum::Application.routes.draw do
   get "/:category" => 'board#posts_category'
   get "board/show/:id" => 'board#show'
   get "board/write"
-  get "board/write_complete"
-  get "board/edit"
-  get "board/edit_compelte"
+  post"board/write_complete"
+	get "board/edit/:id" => 'board#edit'
+  post "board/edit_complete"
   get "board/delete_complete"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -26,12 +26,41 @@ class BoardController < ApplicationController
   end
 
   def write_complete
+		post = Post.new
+		post.category = params[:post_category]
+		post.title = params[:post_title]
+		post.price = params[:post_price]
+#	post.number = params[:post_number]
+		post.content = params[:post_content]
+
+		if post.save
+      flash[:alert] = "저장되었습니다."
+      redirect_to "/board/show/#{post.id}"
+    else
+      flash[:alert] = post.errors.values.flatten.join(' ')
+      redirect_to :back
+    end
   end
 
   def edit
+		@post = Post.find(params[:id])
   end
 
   def edit_complete
+		post = Post.new
+		post.category = params[:post_category]
+		post.title = params[:post_title]
+		post.price = params[:post_price]
+#post.number = nil
+		post.content = params[:post_content]
+
+		if post.save
+      flash[:alert] = "수정되었습니다."
+      redirect_to "/board/show/#{post.id}"
+    else
+      flash[:alert] = post.errors.values.flatten.join(' ')
+      redirect_to :back
+    end
   end
 
   def delete_complete

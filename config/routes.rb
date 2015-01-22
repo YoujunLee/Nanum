@@ -6,7 +6,7 @@ Nanum::Application.routes.draw do
   post"board/write_complete"
 	get "board/edit/:id" => 'board#edit'
   post "board/edit_complete"
-  get "board/delete_complete"
+  get "board/delete_complete/:id" => 'board#delete_complete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

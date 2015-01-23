@@ -1,6 +1,6 @@
 Nanum::Application.routes.draw do
   get "users/signup"
-  get "users/signup_complete"
+  post"users/signup_complete"
   get "users/login"
   get "users/login_complete"
   get "users/logout_complete"

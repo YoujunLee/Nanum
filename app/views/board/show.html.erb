@@ -17,7 +17,7 @@
 	
 	<form action="/board/write_comment_complete" method="post">
 		<input type="hidden" name="post_id" value="<%= @post.id %>">
-		<p>작성자 아이디: <input type="text" name="comment_content" placeholder="댓글 내용을 입력하시오."> <input type="submit" value="달기"></p>
+		<p><label>작성자 아이디: <input type="text" name="comment_content" placeholder="댓글 내용을 입력하시오."> <input type="submit" value="달기"></label></p>
 	</form>
 	
   <p><a href="/">전체 리스트 가기</a></p>

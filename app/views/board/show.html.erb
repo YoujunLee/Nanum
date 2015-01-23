@@ -5,19 +5,21 @@
   <h4>제목: <%= @post.title %></h4>
   <p style="color: #ff0000">분류: <%= @post.category %></p>
 	<p>가격: <%= @post.price %></p>
-	<p>연락처: 추후업데이트</p>
+	<p>연락처: <%= @post.number%></p>
   <p>내용: <%= @post.content %></p>
 	
 	<p><a href="/board/edit/<%= @post.id %>">수정</a> | <a href="/board/delete_complete/<%= @post.id%>">삭제</a></p>
 	<hr>
 
 	<%@post.comments.each do |comment| %>
-	<p><strong>아이디</strong> <%= comment.content %> | <a href="/board/delete_comment_complete/<%= comment.id %>">삭제</a></p>
+	<p><strong><%= comment.user.username%></strong> <%= comment.content %> | <a href="/board/delete_comment_complete/<%= comment.id %>">삭제</a></p>
 	<%end%>
 	
 	<form action="/board/write_comment_complete" method="post">
 		<input type="hidden" name="post_id" value="<%= @post.id %>">
-		<p><label>작성자 아이디: <input type="text" name="comment_content" placeholder="댓글 내용을 입력하시오."> <input type="submit" value="달기"></label></p>
+			 <% if !@comment_writer.nil? %>
+	  	   <p><strong><%= @comment_writer.username %></strong> <input type="text" name="comment_content" placeholder="댓글 내용을 입력하세요."> <input type="submit" value="달기"></p>
+	     <% end %>
 	</form>
 	
   <p><a href="/">전체 리스트 가기</a></p>

@@ -13,7 +13,7 @@
 
 	<p><label>가격: <input type="text" name="post_price" placeholder="원단위"></label></p>
 
-	<p><label>연락처: <input type="text" name="post_number" placeholder="Phone or KaKaO"></label></p>
-  <p><label>내용: <textarea name="post_content" placeholder="내용을 입력하세요."></label></textarea></p>
+	<p><label>연락처: <input type="text" name="post_number" value="<%= @user.number %>" placeholder="Phone or KaKaO"></label></p>
+  <p><label>내용: <textarea name="post_content" placeholder="내용을 입력하세요."></textarea></label></p>
   <input type="submit" value="추가하기">
 </form>

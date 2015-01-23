@@ -2,7 +2,7 @@
 		<div style="border: 1px solid #ffffff">
 		  <h4><a href="board/show/<%=post.id%>"><%= post.title %></a>[<%= post.comments.count%>]</h4>
 		  <p style="color: #ff0000"><%= post.category %></p>
-		  <p>닉네임</p>
+		  <p><strong><%= post.user.username %></strong></p>
 		  <p><%= post.content %></p>
 		</div>
 	<% end %>

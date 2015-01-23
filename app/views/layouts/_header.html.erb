@@ -1,5 +1,11 @@
 <header>
 	<nav>
-		<h4><a href="/">Beta tester</a> || <a href="/used">중고장터</a> | <a href="/together">공동구매</a> | <a href="/give">나눔</a> | <a href="/help">도와주세요</a> || <a href="/board/write">글쓰기</a> | <a href="/users/signup">회원가입</a> | <a href="/users/login">로그인</a></h4>
+		<h4><a href="/">Beta tester</a> || <a href="/used">중고장터</a> | <a href="/together">공동구매</a> | <a href="/give">나눔</a> | <a href="/help">도와주세요</a> || <a href="/board/write">글쓰기</a> ||
+<% if session[:user_id].nil? %>
+<a href="/users/signup">회원가입</a> | <a href="/users/login">로그인</a>
+<% else %>
+<a href="/users/logout_complete">로그아웃</a>
+<% end %>
+</h4>
 	</nav>
 </header>

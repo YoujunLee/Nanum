@@ -1,4 +1,9 @@
 Nanum::Application.routes.draw do
+  get "users/signup"
+  get "users/signup_complete"
+  get "users/login"
+  get "users/login_complete"
+  get "users/logout_complete"
   root"board#posts"
   get "/:category" => 'board#posts_category'
   get "board/show/:id" => 'board#show'
@@ -8,6 +13,7 @@ Nanum::Application.routes.draw do
   post "board/edit_complete"
   get "board/delete_complete/:id" => 'board#delete_complete'
 	post"board/write_comment_complete"
+	get"board/delete_comment_complete/:id" => 'board#delete_comment_complete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

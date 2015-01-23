@@ -12,7 +12,7 @@
 	<hr>
 
 	<%@post.comments.each do |comment| %>
-	<p><strong>아이디</strong> <%= comment.content %></p>
+	<p><strong>아이디</strong> <%= comment.content %> | <a href="/board/delete_comment_complete/<%= comment.id %>">삭제</a></p>
 	<%end%>
 	
 	<form action="/board/write_comment_complete" method="post">

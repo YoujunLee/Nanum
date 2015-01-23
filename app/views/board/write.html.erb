@@ -1,7 +1,7 @@
 <p><%= flash[:alert] %></p>
 <h2>게시글 작성</h2>
 
-<form action="/board/write_complete" method="post">
+<form action="/board/write_complete" method="post" enctype="multipart/form-data">
   <p style="color: #ff0000">분류:
   <select name="post_category">
     <option value="중고장터">중고장터</option>
@@ -15,5 +15,6 @@
 
 	<p><label>연락처: <input type="text" name="post_number" value="<%= @user.number %>" placeholder="Phone or KaKaO"></label></p>
   <p><label>내용: <textarea name="post_content" placeholder="내용을 입력하세요."></textarea></label></p>
+	<p><label>사진 업로드: <input type="file" name="image"></label></p>
   <input type="submit" value="추가하기">
 </form>

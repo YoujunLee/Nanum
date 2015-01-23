@@ -38,6 +38,7 @@ class BoardController < ApplicationController
 		post.price = params[:post_price]
 		post.number = params[:post_number]
 		post.content = params[:post_content]
+		post.image = params[:image]
 
 		if post.save
       flash[:alert] = "저장되었습니다."

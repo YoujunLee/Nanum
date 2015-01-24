@@ -1,11 +1,23 @@
-<header>
-	<nav>
-		<h4><a href="/">Beta tester</a> || <a href="/used">중고장터</a> | <a href="/together">공동구매</a> | <a href="/give">나눔</a> | <a href="/help">도와주세요</a> || <a href="/board/write">글쓰기</a> ||
-<% if session[:user_id].nil? %>
-<a href="/users/signup">회원가입</a> | <a href="/users/login">로그인</a>
-<% else %>
-<a href="/users/logout_complete">로그아웃</a>
-<% end %>
-</h4>
-	</nav>
-</header>
+	<div class="container">
+	<header>
+		<div class="masthead">
+			<h3 class="text-muted nanum-title"><a class="nanum-title-link"  href="/">Beta Test</a></h3>
+			<div style="text-align: right; padding: 0px 0px 10px 0px">
+			<% if session[:user_id].nil? %>
+				<a href="/users/signup">회원가입</a> | <a href="/users/login">로그인</a>
+			<% else %>
+				<a href="/users/logout_complete">로그아웃</a>
+			<% end %>
+			</div>
+			<nav role="navigation">
+				<ul class="nav nav-justified">
+					<li class="active"> <a href="/used">중고장터</a> </li>
+					<li class="active"> <a href="/together">공동구매</a> </li>
+					<li class="active"> <a href="/give">나눔</a> </li>
+					<li class="active"> <a href="/help">도와주세요</a> </li>
+					<li class="active"> <a href="/board/write">글쓰기</a> </li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+</div>

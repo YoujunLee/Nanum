@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+   .nanum-title {
+		       height: 30px;
+									       padding: 0px 0px 0px 0px;
+																	      text-align: center;
+																				    }
+
+    a.nanum-title-link {
+			      color: #a3293d;
+									     }
+
+    a.nanum-title-link:hover {
+			      color: #ee3b53;
+									       text-decoration: none;
+												     }

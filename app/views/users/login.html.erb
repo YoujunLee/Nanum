@@ -1,8 +1,33 @@
-<p><%= flash[:alert] %></p>
-<h2>로그인하기</h2>
+<div class="container">
+  <% if !flash[:alert].nil? %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
 
-<form action="/users/login_complete" method="post">
-	<p><label>학번: <input type="tel" name="code" autocomplete="off"></label></p>
-	<p><label>비밀번호: <input type="password" name="password"></label></p>
-	<input type="submit" value="로그인">
-</form>
+	<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+	<form class="form-signin" action="/users/login_complete" method="post">
+	<h2 class="form-signin-heading">Login</h2>
+	<label for="inputEmail" class="sr-only">Email address</label>
+	<input class="form-control" type="tel" name="code" placeholder="학번" required autofocus  autocomplete="off"></p>
+	<label for="inputPassword" class="sr-only">Password</label>
+	<input class="form-control" type="password" name="password" placeholder="비밀번호" autocomplete="off" required></p>
+
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" value="rememeber-me">
+			로그인 유지
+		</label>
+	</div>
+
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+	</form>
+	</div>
+
+	<div class="col-md-4">
+	</div>
+	</div>
+</div>

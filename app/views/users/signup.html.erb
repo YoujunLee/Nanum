@@ -1,12 +1,40 @@
-<p><%= flash[:alert] %> </p>
-<h2>회원 가입하기</h2>
+<div class="container">
+  <% if !flash[:alert].nil? %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
 
-<form action="/users/signup_complete" method="post">
-	<p><label>이름: <input type="txet" name="name" required autofocus> </label></p>
-	<p><label>학번: <input type="tel"name="code" required placeholder="&nbsp; 8자리 학번"></label></p>
-	<p><label>비밀번호: <input type="password" name="password" required  autocomplete="off" placeholder="&nbsp; 6자리 이상"></label></p>
-	<p><label>비밀번호 확인: <input type="password" name="retype_password" required  autocomplete="off" placeholder="&nbsp; 재입력"></label></p>
-	<p><label>닉네임: <input type="text" name="username" required></label></p>
-	<p><label>연락처: <input type="tel" name="number" required placeholder="&nbsp; 숫자만 입력"></label></p> 
-	<input type="submit" value="가입">
-</form>
+	<div class="row">
+	<div class="col-md-4">
+	</div>
+
+	<div class="col-md-4">
+	<form class="form-signin"  action="/users/signup_complete" method="post">
+	<h2 class="form-signin-heading">Sign Up</h2>
+	<label for="inputName" class="sr-only">Name</label>
+	<input class="form-control" type="text" name="name" placeholder="&nbsp; 성명" required autofocus>
+	<p></p>
+	<label for="inputCode" class="sr-only">dddddddddddddCode</label>
+	<input class="form-control" type="tel"name="code" required placeholder="&nbsp; 학번(8자리)">
+	<p></p>
+	<label for="inputPass" class="sr-only">Password</label>
+	<input class="form-control" type="password" name="password" required  autocomplete="off" placeholder="&nbsp; 비밀번호(6자리 이상)">
+	<p></p>
+	<label for="inputAgain" class="sr-only">retype</label>
+	<input class="form-control" type="password" name="retype_password" required  autocomplete="off" placeholder="&nbsp; 비밀번호 재입력">
+	<p></p>
+	<label for="inputNick" class="sr-only">Nick</label>
+	<input class="form-control" type="text" name="username" placeholder="&nbsp; 닉네임" required  required>
+	<p></p>
+	<label for="inputPhone" class="sr-only">Phone</label>
+	<input class="form-control" type="tel" name="number" required placeholder="&nbsp; 연락처"> 
+	<p></p>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+	</form>
+	</div>
+
+	<div class="col-md-4">
+	</div>
+	</div>
+</div>

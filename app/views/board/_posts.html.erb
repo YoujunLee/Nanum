@@ -1,3 +1,4 @@
+<div class="container">
 <% @posts.reverse.each do |post| %>
 		<div class="panel">
 			<div class="row panel-body">
@@ -10,8 +11,9 @@
 		  <h4><a href="board/show/<%=post.id%>"><%= post.title %></a>&nbsp;<span class="badge"><%= post.comments.count%></span></h4>
 			<p><span class="label label-warning"><%= post.category %></span></p>
 		  <p><strong><%= post.user.username %></strong></p>
+
 			</div>
 		</div>
 	</div>
 	<% end %>
-
+</div>

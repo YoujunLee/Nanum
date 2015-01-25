@@ -27,8 +27,9 @@ class BoardController < ApplicationController
   end
 
   def write
-		@user = User.find(session[:user_id])
-  end
+  	@user = User.find(session[:user_id])
+
+	end
 
   def write_complete
 		post = Post.new
@@ -51,18 +52,18 @@ class BoardController < ApplicationController
 
   def edit
 		@post = Post.find(params[:id])
-		if @post.user_id != session[:user_id]
-			flash[:alert] = "수정 권한이 없습니다."
-			redirect_to :back
-		end
+			if @post.user_id != session[:user_id]
+				flash[:alert] = "수정 권한이 없습니다."
+				redirect_to :back
+			end
   end
 
   def edit_complete
-		post = Post.new
+		post = Post.find(params[:id])
 		post.category = params[:post_category]
 		post.title = params[:post_title]
 		post.price = params[:post_price]
-		post.number = parmas[:post_number]
+		post.number = params[:post_number]
 		post.content = params[:post_content]
 
 		if post.save

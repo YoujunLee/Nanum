@@ -5,6 +5,31 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+	
+	
+
+
+<script type="text/javascript">
+	$(function()
+			{ window.mySwipe = $('#mySwipe').Swipe({//window.mySwipe=적용할 요소 선택.Swipe({옵션 설정}).data('Swipe');
+				startSlide: 0,
+				auto: 300,
+				continuous: true,
+				disableScroll: true,
+				stopPropagation: true,
+				callback: function(index,element){},
+				transitionEnd: function(index,element){}
+			}).data('Swipe');
+
+			$(".prevBtn").on("click",function(){
+					mySwipe.prev();
+					});
+
+			$(".nextBtn").on("click",function(){
+				mySwipe.next();
+				});
+		});
+	</script>
 </head>
 <body>
 

@@ -10,8 +10,17 @@
 	<div class="col-md-1">
 	</div>
 	
-	<div class="col-md-5 text-right">	
-		<p><img src="<%= @post.image_url(:medium) %>"></p>
+	<div class="col-md-5 text-right">
+		<div id='mySwipe' class='swipe'>
+			<ul class='swipe-wrap'>
+				<li><img src="<%= @post.image_url(:medium) %>"></li>
+				<li><img src="http://codelion.net/contents-image/w5_l15_h47_22.png"></li>
+			</ul>
+		</div>
+		<div class="btn_wrap">
+			<button class="prevBtn">이전</button>
+			<button class="nextBtn">다음</button>
+		</div>
 	</div>
 	
 	<div class="col-md-5">

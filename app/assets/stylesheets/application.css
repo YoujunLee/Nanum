@@ -48,3 +48,23 @@ a.nanum-title-link:hover {
   border-radius: 6px;
   padding: 0px 0px 0px 10px;
 }
+.swipe{
+				overflow: hidden;
+				visibility: hidden;
+				position: relative;
+				}
+	.swipe-wrap{
+				overflow:hidden;
+				position: relative;
+			}
+	.swipe-wrap >li{
+			float:left;
+			width:100%;
+			position: relative;
+								}
+	
+	li{list-style:none;}
+	img{width:100%; max-width:100%}
+		#mySwipe{max-width:500px;margin:0 auto;}
+	.btn_wrap{text-align:center; padding-top:20px;}
+
